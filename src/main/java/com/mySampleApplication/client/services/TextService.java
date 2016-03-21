@@ -1,6 +1,8 @@
 package com.mySampleApplication.client.services;
 
 import com.google.gwt.core.client.GWT;
+import com.mySampleApplication.shared.OrderConfirmation;
+import com.mySampleApplication.shared.Response;
 import org.fusesource.restygwt.client.MethodCallback;
 import org.fusesource.restygwt.client.RestService;
 
@@ -34,4 +36,11 @@ public interface TextService extends RestService {
     @Path("/getHello")
     @Produces(MediaType.APPLICATION_JSON)
     void getHello(MethodCallback<JSONtoString> callback);
+
+    @POST
+    @Path("/getTable")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    void getTable(OrderConfirmation request, MethodCallback<Response> callback);
+//    void getTable(@FormParam("column")JSONNumber jsColumn, @FormParam("row")JSONNumber jsRow, MethodCallback<JSONArray> callback);
 }

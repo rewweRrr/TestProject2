@@ -1,8 +1,5 @@
 package com.mySampleApplication.client.services;
 
-import com.google.gwt.core.client.GWT;
-import org.fusesource.restygwt.client.JsonEncoderDecoder;
-
 /**
  * Created by rewweRrr on 21.03.2016
  */
@@ -17,15 +14,15 @@ public class JSONtoString {
         this.msg = msg;
     }
 
-    public interface JSONtoStringJED extends JsonEncoderDecoder<JSONtoString> {
-    }
-
-    @Override
-    public String toString() {
-        if(GWT.isClient()) {
-            JSONtoStringJED jed = GWT.create(JSONtoStringJED.class);
-            return jed.encode(this).toString();
-        }
-        return super.toString();
-    }
+//    public interface JSONtoStringJED extends JsonEncoderDecoder<JSONtoString> {
+//    }
+//
+//    @Override
+//    public String toString() {
+//        if(GWT.isClient()) {
+//            JSONtoStringJED jed = GWT.create(JSONtoStringJED.class);
+//            return jed.encode(this).toString();
+//        }
+//        return super.toString();
+//    }
 }
