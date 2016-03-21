@@ -8,6 +8,7 @@
     <source path='client'/>
     <!-- Specify the app entry point class.                   -->
     <entry-point class='com.mySampleApplication.client.MySampleApplication'/>
+    <source path='client' />
 
     <!-- Specify the app servlets.                   -->
 </module>

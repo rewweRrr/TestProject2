@@ -4,9 +4,8 @@ import com.google.gwt.core.client.GWT;
 import org.fusesource.restygwt.client.MethodCallback;
 import org.fusesource.restygwt.client.RestService;
 
-import javax.ws.rs.FormParam;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
+import javax.ws.rs.*;
+import javax.ws.rs.core.MediaType;
 
 /**
  * Created by rewweRrr on 20.03.2016
@@ -24,7 +23,15 @@ public interface TextService extends RestService {
         }
 
     }
+
     @POST
     @Path("/getText")
-    void getText(@FormParam("msg")String msg, MethodCallback<String> callback);
+    @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+    @Produces(MediaType.APPLICATION_JSON)
+    void getText(@FormParam("msg")String msg, MethodCallback<JSONtoString> callback);
+
+    @GET
+    @Path("/getHello")
+    @Produces(MediaType.APPLICATION_JSON)
+    void getHello(MethodCallback<JSONtoString> callback);
 }

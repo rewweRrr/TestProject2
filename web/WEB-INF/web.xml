@@ -21,6 +21,6 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
-        <url-pattern>/MyController/*</url-pattern>
+        <url-pattern>/MySampleApplication/MyTestService/*</url-pattern>
     </servlet-mapping>
 </web-app>
